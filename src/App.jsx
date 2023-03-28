@@ -75,7 +75,7 @@ function App() {
       ></motion.div>
       <div className='model'>
         <motion.img
-          src="/model.png"
+          src="model.png"
           alt="Modelo fitness"
           initial={{ x: -60, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
