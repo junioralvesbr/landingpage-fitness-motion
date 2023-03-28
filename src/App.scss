@@ -1,0 +1,256 @@
+.dflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  @extend .dflex;
+  width: 100%;
+  height: 100vh;
+  padding: 1.25rem 6.25rem;
+  overflow: hidden;
+  background-color: var(--bgColor);
+  position: relative;
+
+  .circle {
+    width: 30vw;
+    height: 30vw;
+    background-color: var(--circleColor);
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .model {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    img {
+      width: 23vw;
+      display: block;
+      margin: auto;
+
+      @media(max-width: 1368px) {
+        width: 25vw;
+      }
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}
+
+//header
+header {
+  @extend .dflex;
+  justify-content: space-between;
+  height: 3.75rem;
+
+  .menu_container {
+    @extend .dflex;
+    font-size: 1rem;
+    gap: 2rem;
+
+    .menu,
+    .search {
+      @extend .dflex;
+      cursor: pointer;
+      gap: 0.5rem;
+    }
+  }
+
+  .logo-container {
+    @extend .dflex;
+    cursor: pointer;
+
+    span {
+      font-size: 1.8rem;
+      font-family: var(--headline);
+    }
+  }
+
+  .cart_container {
+    @extend .dflex;
+    cursor: pointer;
+    gap: 2rem;
+
+    .cart,
+    .user {
+      @extend .dflex;
+      gap: 0.5rem;
+    }
+  }
+}
+
+//header
+
+//content_wrapper
+.content_wrapper {
+  @extend .dflex;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 5rem);
+  z-index: 1;
+  position: relative;
+
+  .item_left,
+  .item_right {
+    @extend .dflex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+  }
+
+  .item_left {
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .info {
+      margin: 1.25rem 0 3.125rem 0;
+      color: var(--textColor);
+
+      li {
+        text-transform: uppercase;
+        font-size: 1.375rem;
+        font-family: var(--headline);
+
+        +li {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .main_title {
+      p {
+        font-family: var(--headline);
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 1.25rem;
+
+        span {
+          margin-left: 1.25rem;
+        }
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 12vw;
+        line-height: 1;
+        margin-top: 1vw;
+        color: var(--whiteColor);
+      }
+    }
+
+    .btn_group {
+      @extend .dflex;
+      gap: 3.125;
+
+      .btn {
+        @extend .dflex;
+        width: 9.479vw;
+        height: 3.625rem;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &.primary {
+          background-color: var(--blackColor);
+          color: var(--whiteColor);
+          width: 8.854vw;
+          position: relative;
+
+          &::before {
+            content: '';
+            background-color: var(--blackColor);
+            display: block;
+            width: 2.188rem;
+            position: absolute;
+            top: 0;
+            right: -0.93rem;
+            bottom: 0;
+            z-index: 2;
+            transform: skew(-25deg);
+            box-shadow: 10px 0px 0px 0px rgba(216, 100, 77, 0.75);
+          }
+        }
+
+        &.secondary {
+          background-color: transparent;
+          border: 1px solid var(--btnColor2);
+          margin-left: 50px;
+          transform: skew(-21deg);
+
+          span {
+            transform: skew(21deg);
+          }
+        }
+      }
+    }
+  }
+
+  .item_right {
+    align-items: flex-end;
+    justify-content: center;
+
+    p {
+      font-family: var(--headline);
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 1.35rem;
+
+      margin: 100px 0 3vw 0;
+
+      span {
+        margin-left: 20px;
+      }
+    }
+
+    h2 {
+      font-size: 3.5vw;
+      text-transform: uppercase;
+      text-align: right;
+      line-height: 1;
+    }
+
+    .message {
+      font-size: 1rem;
+      margin: 3vw 0;
+      text-align: right;
+      color: var(--textColor);
+    }
+
+    .nav {
+      @extend .dflex;
+
+      span {
+        @extend .dflex;
+        width: 38px;
+        height: 38px;
+        border-radius: 38px;
+        border: 1px solid var(--btnColor);
+        font-size: 12px;
+        cursor: pointer;
+
+        &.active {
+          background-color: var(--btnColor2);
+          color: var(--whiteColor);
+        }
+
+        +span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+//content_wrapper

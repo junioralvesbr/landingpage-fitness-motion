@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&family=Rozha+One&display=swap');
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --headline: 'Rozha One', serif;
+  --bgColor: #d8d5ce;
+  --circleColor: #f1e8d9;
+  --blackColor: #000;
+  --btnColor: rgb(216, 100, 77);
+  --btnColor2: #bbb8b1;
+  --whiteColor: #fff;
+  --greenColor: #5adaa9;
+  --textColor: #66625f;
+
+  font-family: var(--poppins);
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
